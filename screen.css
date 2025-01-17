@@ -59,6 +59,7 @@ h1 {
   padding: 15px;
   position: relative;
   overflow: hidden;
+  cursor: none;
 }
 
 /* Canvas styles without borders */
@@ -69,6 +70,7 @@ h1 {
   border: none;
   border-radius: 0;
   box-shadow: none;
+  cursor: none;
 }
 
 /* Paragraph styles */
