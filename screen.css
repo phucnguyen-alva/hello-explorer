@@ -1,4 +1,117 @@
-/* Add screen styles below */
-a.active {
-    font-weight: bold;
+/* Body styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  overflow: hidden; /* Prevent scrolling */
+  background: radial-gradient(circle at center, #000814, #000000, #000000, #000000); /* Space-like gradient */
+  color: #ffffff; /* White text for contrast */
+}
+
+/* Space effect: Animated stars */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(2px at 20px 30px, #ffffff, transparent 50%),
+              radial-gradient(1px at 50px 100px, #ffffff, transparent 50%),
+              radial-gradient(2px at 150px 200px, #ffffff, transparent 50%),
+              radial-gradient(1px at 300px 400px, #ffffff, transparent 50%);
+  background-size: 200px 200px;
+  animation: move-stars 30s linear infinite;
+}
+
+/* Star movement animation */
+@keyframes move-stars {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-100px, -100px);
+  }
+}
+
+/* Heading styles */
+h1 {
+  margin: 10px 0;
+  font-size: 200px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff; /* White text for contrast */
+  text-shadow: 5px 5px 15px rgba(255, 255, 255, 0.7); /* Glow effect */
+}
+
+/* Container for canvases */
+.rive-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Anchor links inside the container */
+.rive-container a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffdd57; /* Gold color for links */
+}
+
+/* Hover effect for links */
+.rive-container a:hover {
+  text-shadow: 0 0 5px #ffdd57, 0 0 10px #ffdd57;
+}
+
+/* Canvas styles without borders */
+.rive-container canvas {
+  width: 400px;
+  height: 400px;
+  display: block;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Paragraph styles */
+p {
+  max-width: 600px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #eaeaea; /* Light gray text for readability */
+  margin: 10px 20px;
+  font-weight: 500;
+  z-index:100;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 120px; /* Smaller heading size */
+  }
+
+  .rive-container canvas {
+    width: 300px;
+    height: 300px;
+  }
+
+  p {
+    font-size: 16px; /* Smaller font for paragraph */
+  }
+
+  .rive-container {
+    flex-direction: column;
+  }
 }

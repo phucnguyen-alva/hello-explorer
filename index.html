@@ -3,17 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Earth</title>
+    <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
     <link rel="stylesheet" href="screen.css">
   </head>
   <body>
-    <h1>Home</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-    <script src="index.js"></script>
+    <h1>Earth</h1>
+    <div class="rive-container">
+      <a href="index.html">
+        <canvas id="riveCanvas1"></canvas>
+      </a>
+      <a href="about.html">
+        <canvas id="riveCanvas2"></canvas>
+      </a>
+    </div>
+  <p id="infoText">
+    (click here to shuffle facts about "Earth")
+  </p>
+  <script src="index.js"></script>
   </body>
 </html>
