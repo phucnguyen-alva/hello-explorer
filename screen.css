@@ -10,6 +10,7 @@ body {
   overflow: hidden; /* Prevent scrolling */
   background: radial-gradient(circle at center, #000814, #000000, #000000, #000000); /* Space-like gradient */
   color: #ffffff; /* White text for contrast */
+  cursor: none;
 }
 
 /* Space effect: Animated stars */
@@ -60,20 +61,6 @@ h1 {
   overflow: hidden;
 }
 
-/* Anchor links inside the container */
-.rive-container a {
-  display: inline-block;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ffdd57; /* Gold color for links */
-}
-
-/* Hover effect for links */
-.rive-container a:hover {
-  text-shadow: 0 0 5px #ffdd57, 0 0 10px #ffdd57;
-}
-
 /* Canvas styles without borders */
 .rive-container canvas {
   width: 400px;
@@ -96,6 +83,44 @@ p {
   z-index:100;
 }
 
+/* Add basic styling for links */
+a {
+  text-decoration: none;
+  color: #ffffff; /* Inherits white theme */
+}
+
+
+/* Style active state for links */
+a:active {
+  color: #f0a500; /* Golden yellow */
+}
+
+/* Add focus styles for links */
+a:focus {
+  outline: 2px solid #f0a500; /* Golden focus ring */
+  outline-offset: 2px;
+}
+
+/* Style the canvas elements */
+.rive-container canvas {
+  background-color: #111111; /* Dark background for canvas */
+  cursor: none;
+}
+
+
+/* Custom cursor circle */
+#customCursor {
+  position: fixed;
+  width: 20px; /* Diameter of the circle */
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* White circle with some transparency */
+  border: 2px solid #f0a500; /* Optional border for styling */
+  border-radius: 50%; /* Make it a circle */
+  pointer-events: none; /* Prevent the circle from interfering with clicks */
+  z-index: 10000; /* Ensure it appears on top of everything */
+  transform: translate(-50%, -50%); /* Center the circle on the cursor */
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   h1 {
@@ -109,6 +134,7 @@ p {
 
   p {
     font-size: 16px; /* Smaller font for paragraph */
+    padding: 10px;
   }
 
   .rive-container {

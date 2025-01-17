@@ -1,8 +1,6 @@
 // Select canvas elements by ID
 const canvas1 = document.getElementById("riveCanvas1");
 const canvas2 = document.getElementById("riveCanvas2");
-const canvas3 = document.getElementById("riveCanvas3");
-const canvas4 = document.getElementById("riveCanvas4");
 
 // Initialize Rive animations for each canvas
 const riveInstance1 = new rive.Rive({
@@ -45,13 +43,21 @@ window.addEventListener("resize", () => {
   resizeCanvas(canvas1, riveInstance1);
   resizeCanvas(canvas2, riveInstance2);
 });
+
+
 // Array of sentences to cycle through
+//ChatGPT - "generate 10 concise (about 10 words) sentences about the Earth that 5-year-old exciting to learn about."
 const sentences = [
-    "Earth is home to millions of species, including humans.",
-    "The planet's rotation causes day and night.",
-    "Earth's atmosphere contains 21% oxygen.",
-    "The Moon is Earth's only natural satellite.",
-    "Earth has a magnetic field that protects it from solar wind."
+    "Earth is a big ball where all of us live!",
+    "It has land, water, mountains, forests, and colorful animals!",
+    "Earth spins like a top, making day and night happen!",
+    "Earth has invisible air we breathe to stay alive!",
+    "There’s more water than land, making Earth a blue planet!",
+    "Earth’s middle is super hot, like lava in volcanoes!",
+    "We live on Earth’s crust, like frosting on a cake!",
+    "Earth orbits the Sun, taking one whole year for one trip!",
+    "Clouds and rainbows make Earth’s sky so magical and pretty!",
+    "Earth has North and South Poles, covered with shiny white ice!",
   ];
   
   let currentSentenceIndex = 0;
@@ -67,3 +73,13 @@ const sentences = [
     // Update the text content of the paragraph
     infoText.textContent = sentences[currentSentenceIndex];
   });
+// Create the custom cursor element
+const customCursor = document.createElement('div');
+customCursor.id = 'customCursor';
+document.body.appendChild(customCursor);
+
+// Update cursor position on mouse move
+document.addEventListener('mousemove', (event) => {
+  customCursor.style.left = `${event.pageX}px`;
+  customCursor.style.top = `${event.pageY}px`;
+});

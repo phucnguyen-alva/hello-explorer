@@ -40,17 +40,20 @@
         resizeCanvas(canvas1, riveInstance1);
         resizeCanvas(canvas2, riveInstance2);
       });
-
-      // Array of Moon facts
+      
+      // Array of sentences to cycle through
+      //ChatGPT - "generate 10 concise (about 10 words) sentences about the Moon that 5-year-old exciting to learn about."
       const moonFacts = [
-        "The Moon is Earth's only natural satellite.",
-        "The Moon is about 1/6th the size of Earth.",
-        "It takes 27.3 days for the Moon to orbit the Earth.",
-        "The Moon has no atmosphere, which means no sound can be heard.",
-        "The Moon's surface is covered with craters from meteor impacts.",
-        "Humans first landed on the Moon in 1969 during the Apollo 11 mission.",
-        "The Moon influences Earth's tides due to its gravitational pull.",
-        "The far side of the Moon was first photographed in 1959 by the Soviet Luna 3 probe."
+        "The Moon is a glowing ball that lights up night skies!", 
+        "It has craters like giant holes from space rock crashes.",  
+        "The Moon's surface is dusty, like a big playground for astronauts.",
+        "It changes shapes: full, half, and even tiny crescents!",
+        "Wolves in stories love to howl at the bright Moon.", 
+        "The Moon helps make ocean waves dance back and forth.", 
+        "We only see one side of the Moon from Earth!",
+        "Astronauts bounced like kangaroos on the Moon’s low gravity.",  
+        "The Moon has no air, so spacesuits are a must!",  
+        "It takes the Moon about a month to orbit Earth.",  
       ];
 
       let currentMoonFactIndex = 0;
@@ -66,3 +69,14 @@
         // Update the text content of the paragraph
         infoText2.textContent = moonFacts[currentMoonFactIndex];
       });
+
+      // Create the custom cursor element
+const customCursor = document.createElement('div');
+customCursor.id = 'customCursor';
+document.body.appendChild(customCursor);
+
+// Update cursor position on mouse move
+document.addEventListener('mousemove', (event) => {
+  customCursor.style.left = `${event.pageX}px`;
+  customCursor.style.top = `${event.pageY}px`;
+});
