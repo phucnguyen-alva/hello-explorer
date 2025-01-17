@@ -101,12 +101,6 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* Style the canvas elements */
-.rive-container canvas {
-  background-color: #111111; /* Dark background for canvas */
-  cursor: none;
-}
-
 
 /* Custom cursor circle */
 #customCursor {
